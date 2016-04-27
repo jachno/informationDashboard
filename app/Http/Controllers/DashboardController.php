@@ -7,11 +7,12 @@ use App\Http\Requests;
 use App\timeline;
 use App\Backlog;
 use Auth;
+use Log;
 class DashboardController extends Controller
 {
     function index()
     {
-        
+          Log::info('view index');
         
         $timelines = timeline::orderBy('created_at', 'DESC')->get();
         $backlogs = backlog::orderBy('priority', 'ASC')->get();;
@@ -27,10 +28,12 @@ class DashboardController extends Controller
     
     function formPostUpdate(Request $request, $id=null)
     {
-
+          Log::info('view postform');
 
     if($id == null)
     {
+             Log::info('new');
+
         $timeline = new timeline;
     }
     else
@@ -38,7 +41,7 @@ class DashboardController extends Controller
         $timeline = timeline::findorfail($id);
     }
 
-
+      Log::info($request);
 
         $this->validate($request, [
                             'description' => 'required|max:1000'

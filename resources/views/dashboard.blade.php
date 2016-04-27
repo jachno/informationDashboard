@@ -147,7 +147,7 @@
                                 <div class="widget">
                                     <div class="widget-image widget-image-sm" style="height:85px;">
                                         <div class="widget-image-content text-center" style="background-color:rgb(110, 191, 209);">
-                                            <h2 class="widget-heading text-light"><strong>NonFunction Test Team</strong></h2>
+                                            <h2 class="widget-heading text-light"><strong>NonFunctional Test Team</strong></h2>
                                         </div>
                                     </div>
 
@@ -157,17 +157,17 @@
                                     <tbody>
                                         <tr>
                                             <td>ATG Fusion Mode</td>
-                                            <td><strong>Fusion Out @ 10:20 16/03</strong></td>
+                                            <td><strong>Fusion Out @ 09:40 17/03</strong></td>
                                    
                                         </tr>
                                         <tr>
-                                            <td>Current ATF NFT Build</td>
+                                            <td>Current ATG NFT Build</td>
                                             <td><strong>"INTPIPE-COMP-JOB1-2745" "10-Mar-2016 19:28 SVN Version 32046" "int" "F-1A-D5C82D31" </strong></td>
                                            
                                         </tr>
                                         <tr>
-                                            <td>Jamies Current State of happiness with people</td>
-                                            <td><strong>Meh</strong></td>
+                                            <td>Jamie's Current State of Happiness with people</td>
+                                            <td><strong>Alright I 'spose</strong></td>
                                            
                                         </tr>
                                     </tbody>
@@ -179,6 +179,10 @@
                                     <div class="widget">
                                                              <div class="widget-content widget-content-mini border-bottom">
                                         <span class="pull-right text-muted">{{$backlogs->count()}} items</span>
+                                                                          @if (Auth::check())
+                                    
+                                    <a href="/editbacklog/"><button href="" class="btn btn-primary">add backlog</button></a>
+@endif
                                         Current Backlog
                                     </div>
                                     <div class="widget-content widget-content-full">

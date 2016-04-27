@@ -40,5 +40,4 @@
 
         <!-- Modernizr (browser feature detection library) -->
         <script src="/js/vendor/modernizr-2.8.3.min.js"></script>
-        <meta http-equiv="refresh" content="60">
     </head>

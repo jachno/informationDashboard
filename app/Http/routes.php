@@ -15,7 +15,6 @@ Route::get('/', 'DashboardController@index');
 
 Route::get('/postupdate/{id?}', 'DashboardController@postUpdate');
 
-Route::post('/formpostupdate/{id?}', 'DashboardController@formPostUpdate');
 
 Route::get('/addbacklog', 'DashboardController@addBacklog');
 
@@ -37,6 +36,7 @@ Route::post('login', array('uses' => 'HomeController@doLogin'));
 Route::get('logout', array('uses' => 'HomeController@logout'));
 });
 
+Route::post('/formpostupdate/{id?}', 'DashboardController@formPostUpdate');
 
 
 /*
