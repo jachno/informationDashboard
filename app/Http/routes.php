@@ -11,29 +11,29 @@
 |
 */
 Route::group(['middleware' => 'web'], function () {
-Route::get('/', 'DashboardController@index');
+    Route::get('/', 'DashboardController@index');
 
-Route::get('/postupdate/{id?}', 'DashboardController@postUpdate');
-
-
-Route::get('/addbacklog', 'DashboardController@addBacklog');
-
-Route::get('/editbacklog/{id?}/', 'DashboardController@editBacklog');
+    Route::get('/postupdate/{id?}', 'DashboardController@postUpdate');
 
 
-Route::post('/formPostBacklog/{id?}/', 'DashboardController@formPostBacklog');
+    Route::get('/addbacklog', 'DashboardController@addBacklog');
 
-Route::post('/savebacklog', ['as' => 'backlog.save', 'uses' => 'DashboardController@saveBacklog']);
+    Route::get('/editbacklog/{id?}/', 'DashboardController@editBacklog');
 
-Route::get('/deleteupdate/{id}', 'DashboardController@deleteUpdate');
+
+    Route::post('/formPostBacklog/{id?}/', 'DashboardController@formPostBacklog');
+
+    Route::post('/savebacklog', ['as' => 'backlog.save', 'uses' => 'DashboardController@saveBacklog']);
+
+    Route::get('/deleteupdate/{id}', 'DashboardController@deleteUpdate');
 
     
 // route to show the login form
-Route::get('login', array('uses' => 'HomeController@showLogin'));
+    Route::get('login', array('uses' => 'HomeController@showLogin'));
 
 // route to process the form
-Route::post('login', array('uses' => 'HomeController@doLogin'));
-Route::get('logout', array('uses' => 'HomeController@logout'));
+    Route::post('login', array('uses' => 'HomeController@doLogin'));
+    Route::get('logout', array('uses' => 'HomeController@logout'));
 });
 
 Route::post('/formpostupdate/{id?}', 'DashboardController@formPostUpdate');
@@ -53,4 +53,3 @@ Route::post('/formpostupdate/{id?}', 'DashboardController@formPostUpdate');
 Route::group(['middleware' => ['web']], function () {
     //
 });
-
