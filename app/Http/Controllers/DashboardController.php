@@ -8,6 +8,7 @@ use App\timeline;
 use App\Backlog;
 use Auth;
 use Log;
+
 class DashboardController extends Controller
 {
     function index()
@@ -15,33 +16,31 @@ class DashboardController extends Controller
           Log::info('view index');
         
         $timelines = timeline::orderBy('created_at', 'DESC')->get();
-        $backlogs = backlog::orderBy('priority', 'ASC')->get();;
-        return view('dashboard', compact('timelines','backlogs'));
+        $backlogs = backlog::orderBy('priority', 'ASC')->get();
+        ;
+        return view('dashboard', compact('timelines', 'backlogs'));
     }
     
     
     function postUpdate($id = null)
     {
-        return view('postupdate')->with('timeline',timeline::find($id));
+        return view('postupdate')->with('timeline', timeline::find($id));
     }
     
     
-    function formPostUpdate(Request $request, $id=null)
+    function formPostUpdate(Request $request, $id = null)
     {
           Log::info('view postform');
 
-    if($id == null)
-    {
-             Log::info('new');
+        if ($id == null) {
+            Log::info('new');
 
-        $timeline = new timeline;
-    }
-    else
-    {
-        $timeline = timeline::findorfail($id);
-    }
+            $timeline = new timeline;
+        } else {
+            $timeline = timeline::findorfail($id);
+        }
 
-      Log::info($request);
+        Log::info($request);
 
         $this->validate($request, [
                             'description' => 'required|max:1000'
@@ -49,17 +48,17 @@ class DashboardController extends Controller
         
         $timeline->description = $request->description;
         $timeline->save();
-       return redirect('');
+        return redirect('');
 
     }
 
-    function editBacklog(Request $request, $id=null)
+    function editBacklog(Request $request, $id = null)
     {
-        return view('backlog')->with('backlog',backlog::find($id));
+        return view('backlog')->with('backlog', backlog::find($id));
     }
     
     
-     function deleteUpdate(Request $request, $id)
+    function deleteUpdate(Request $request, $id)
     {
         $update = timeline::find($id);
         
@@ -72,14 +71,11 @@ class DashboardController extends Controller
     
     function formPostBacklog(Request $request, $id = null)
     {
-        if ($id == null)
-            {
-                $backlog = new backlog;
-            }
-        else
-            {
+        if ($id == null) {
+            $backlog = new backlog;
+        } else {
                 $backlog = backlog::findorfail($id);
-            }
+        }
         
         
         
@@ -87,12 +83,9 @@ class DashboardController extends Controller
         $backlog->name = $request->name;
         $backlog->description = $request->description;
         
-        if ($request->priority == null)
-        {
+        if ($request->priority == null) {
             $backlog->priority = 99;
-        }
-        else
-        {
+        } else {
             $backlog->priority = $request->priority;
         }
         
@@ -100,5 +93,4 @@ class DashboardController extends Controller
         return redirect('');
 
     }
-    
 }
