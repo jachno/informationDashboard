@@ -6,18 +6,18 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use Auth;
+use App\User;
 
 class HomeController extends Controller
 {
     public function showLogin()
     {
         // show the form
-        return view('login');
+        return view('forms.login');
     }
 
     public function doLogin(Request $request)
     {
-
         // create our user data for the authentication
         $userdata = array(
         'username'     => $request->email,
@@ -45,6 +45,18 @@ class HomeController extends Controller
 
     }
 
+
+public function resetPassword()
+{
+    $user =  User::find(1);
+    
+        $user->password = bcrypt('test');
+        $user->save();
+        
+        
+echo $user->password;
+    
+}
 
     public function logout()
     {

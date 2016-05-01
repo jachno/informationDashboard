@@ -165,11 +165,7 @@
                                             <td><strong>"INTPIPE-COMP-JOB1-2745" "10-Mar-2016 19:28 SVN Version 32046" "int" "F-1A-D5C82D31" </strong></td>
                                            
                                         </tr>
-                                        <tr>
-                                            <td>Jamie's Current State of Happiness with people</td>
-                                            <td><strong>Alright I 'spose</strong></td>
-                                           
-                                        </tr>
+
                                     </tbody>
                                 </table>
                             </div>

@@ -34,6 +34,22 @@ Route::group(['middleware' => 'web'], function () {
 // route to process the form
     Route::post('login', array('uses' => 'HomeController@doLogin'));
     Route::get('logout', array('uses' => 'HomeController@logout'));
+    Route::get('resetPassword', array('uses' => 'HomeController@resetPassword'));
+    
+    
+    
+    Route::get('changePassword', function ()
+    {
+        return view('changePassword');
+    });
+
+
+
+Route::get('users',array('uses' => 'UserController@index'));
+
+
+
+
 });
 
 Route::post('/formpostupdate/{id?}', 'DashboardController@formPostUpdate');

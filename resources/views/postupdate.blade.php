@@ -26,7 +26,7 @@
                 
                 
                 
-                             @if(isset($timeline))
+            @if(isset($timeline))
                 
                       {{Form::model($timeline,array('url' => URL::to('/formpostupdate/' . $timeline->id, array(), true), 'id' =>'submit' ))}}
                         
@@ -37,8 +37,7 @@
                                 {{ Form::textarea('description') }}
                                     {{ Form::submit('Save', array('class' => 'btn btn-effect-ripple btn-sm btn-primary')) }}
                             {{ Form::close() }}
-                            
-                                          
+              
                 <!-- END Login Form -->
             </div>
             <!-- END Login Block -->
