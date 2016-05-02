@@ -18,7 +18,7 @@ class DashboardController extends Controller
         $timelines = timeline::orderBy('created_at', 'DESC')->get();
         $backlogs = backlog::orderBy('priority', 'ASC')->get();
         ;
-        return view('dashboard', compact('timelines', 'backlogs'));
+        return view('dashboard.dashboard', compact('timelines', 'backlogs'));
     }
     
     

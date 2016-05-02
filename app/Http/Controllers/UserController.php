@@ -12,11 +12,11 @@ class UserController extends Controller
 
 public function index()
 {
-    echo 'show users';
-    $users = User::all();
 
+
+   echo 'test'; 
     
-    echo $users->count();
+    return view('users.users')->with('users', User::all());
     
 }
 
