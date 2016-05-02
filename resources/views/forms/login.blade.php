@@ -25,7 +25,7 @@
                             Remember Me?
                         </div>
                         <div class="col-xs-4 text-right">
-                                {{ csrf_field() }} 
+        {{ csrf_field() }} 
                             <button type="submit" class="btn btn-effect-ripple btn-sm btn-primary"><i class="fa fa-check"></i> Let's Go</button>
                         </div>
                     </div>
