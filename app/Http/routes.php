@@ -32,7 +32,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('login', array('uses' => 'HomeController@showLogin'));
 
 // route to process the form
-    Route::post('login', array('uses' => 'HomeController@doLogin'));
+    Route::post('doLogin', array('uses' => 'HomeController@doLogin'));
     Route::get('logout', array('uses' => 'HomeController@logout'));
     Route::get('resetPassword', array('uses' => 'HomeController@resetPassword'));
     
