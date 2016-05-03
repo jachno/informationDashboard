@@ -2,18 +2,26 @@
 @extends('forms.master')
 
 @section('content')
-
+<div class="block animation-fadeInQuickInv">
+                <!-- Login Title -->
+                <div class="block-title">
+                    <div class="block-options pull-right">
+                        <a href="page_ready_reminder.html" class="btn btn-effect-ripple btn-primary" data-toggle="tooltip" data-placement="left" title="" style="overflow: hidden; position: relative;" data-original-title="Forgot your password?"><i class="fa fa-exclamation-circle"></i></a>
+                        <a href="page_ready_register.html" class="btn btn-effect-ripple btn-primary" data-toggle="tooltip" data-placement="left" title="" style="overflow: hidden; position: relative;" data-original-title="Create new account"><i class="fa fa-plus"></i></a>
+                    </div>
+                    <h2>Please Login</h2>
+                </div>
+                <!-- END Login Title -->
                 <!-- Login Form -->
                 <form id="form-login" action="/doLogin" method="post" class="form-horizontal">
                     <div class="form-group">
                         <div class="col-xs-12">
-                                               {{ Form::text('email', '', array('placeholder' => 'username')) }}                        </div>
-
-          
+                             {{ Form::text('email', '', array('placeholder' => 'username', 'class'=>'form-control')) }}                        
+                     </div>
                     </div>
                     <div class="form-group">
                         <div class="col-xs-12">
-                    {{ Form::password('password', array('placeholder' => 'password')) }}               
+                            {{ Form::password('password', array('placeholder' => 'password', 'class'=>'form-control')) }}               
                         </div>
                     </div>
                     <div class="form-group form-actions">
@@ -32,6 +40,6 @@
                 </form>
                 <!-- END Login Form -->
 
-
+</div>
 
 @endsection
