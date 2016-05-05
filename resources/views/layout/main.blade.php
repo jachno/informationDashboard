@@ -5,3 +5,6 @@
    
     <body>
                               @yield('content')
+                              
+                              
+                              @include('layout.footer')

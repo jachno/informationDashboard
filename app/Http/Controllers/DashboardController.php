@@ -13,6 +13,10 @@ class DashboardController extends Controller
 {
     function index()
     {
+      
+
+
+
           Log::info('view index');
         
         $timelines = timeline::orderBy('created_at', 'DESC')->get();

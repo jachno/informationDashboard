@@ -50,9 +50,7 @@ public function resetPassword()
 {
     $user =  User::find(1);
     
-        $user->password = bcrypt('test');
-        $user->save();
-        
+        $u 
         
 echo $user->password;
     

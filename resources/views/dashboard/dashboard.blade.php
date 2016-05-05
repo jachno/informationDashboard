@@ -19,7 +19,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="widget-content widget-content-mini border-bottom">
+                                    <div class="widget">
                                 <table id="general-table" class="table table-striped table-bordered table-vcenter">
                                     <thead>
                                     <tbody>
@@ -37,7 +37,7 @@
                             </div>
                                     
                                 </div>
-                                <div class="col-md-12 col-lg-12">
+                                <div class="widget">
                                     <div class="widget">
                                                              <div class="widget-content widget-content-mini border-bottom">
                                         <span class="pull-right text-muted">{{$backlogs->count()}} items</span>
