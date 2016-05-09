@@ -24,8 +24,8 @@
                 </div>
                 <!-- END Login Title -->
                 
-                
-                
+            {{URL::to('/formpostupdate')}};
+
             @if(isset($timeline))
                 
                       {{Form::model($timeline,array('url' => URL::to('/formpostupdate/' . $timeline->id, array(), true), 'id' =>'submit' ))}}
