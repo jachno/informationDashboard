@@ -17,12 +17,10 @@
                 <!-- Login Title -->
                 <div class="block-title">
                     <div class="block-options pull-right">
-
                     </div>
                     <h2>Post new update</h2>
                 </div>
                 <!-- END Login Title -->
-                
 
  
  
