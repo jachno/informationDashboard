@@ -28,10 +28,10 @@
 
                 @if(isset($backlog))
                 
-                      {{Form::model($backlog,array('url' => URL::to('/formPostBacklog/' . $backlog->id, array(), true), 'id' =>'submit' ))}}
+                      {{Form::model($backlog,array('url' => URL::to('/formPostBacklog/' . $backlog->id, array()), 'id' =>'submit' ))}}
                         
                 @else
-                      {{Form::open(array('url' => URL::to('/formPostBacklog', array(), true), 'id' =>'submit' ))}}
+                      {{Form::open(array('url' => URL::to('/formPostBacklog', array()), 'id' =>'submit' ))}}
                 @endif
 
  
