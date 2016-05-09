@@ -17,8 +17,7 @@
                 <!-- Login Title -->
                 <div class="block-title">
                     <div class="block-options pull-right">
-                        <a href="page_ready_reminder.html" class="btn btn-effect-ripple btn-primary" data-toggle="tooltip" data-placement="left" title="Forgot your password?"><i class="fa fa-exclamation-circle"></i></a>
-            
+
                     </div>
                     <h2>Post new update</h2>
                 </div>
