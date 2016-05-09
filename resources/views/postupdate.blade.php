@@ -24,17 +24,18 @@
                 </div>
                 <!-- END Login Title -->
                 
-            {{URL::to('/formpostupdate')}};
 
+ 
+ 
             @if(isset($timeline))
                 
                       {{Form::model($timeline,array('url' => URL::to('/formpostupdate/' . $timeline->id, array(), true), 'id' =>'submit' ))}}
                         
                 @else
-                      {{Form::open(array('url' => URL::to('/formpostupdate', array(), true), 'id' =>'submit' ))}}
+                      {{Form::open(array('url' => URL::to('/formpostupdate', array(), false), 'id' =>'submit' ))}}
                 @endif
                             {{ Form::label('description') }}
-                                {{ Form::textarea('description') }}
+                                {{ Form::textarea('description',null,array('class'=>'form-control')) }}
                                     {{ Form::submit('Save', array('class' => 'btn btn-effect-ripple btn-sm btn-primary')) }}
                             {{ Form::close() }}
               
