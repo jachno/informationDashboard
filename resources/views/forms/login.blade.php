@@ -6,9 +6,7 @@
                 <!-- Login Title -->
                 <div class="block-title">
                     <div class="block-options pull-right">
-                        <a href="page_ready_reminder.html" class="btn btn-effect-ripple btn-primary" data-toggle="tooltip" data-placement="left" title="" style="overflow: hidden; position: relative;" data-original-title="Forgot your password?"><i class="fa fa-exclamation-circle"></i></a>
-                        <a href="page_ready_register.html" class="btn btn-effect-ripple btn-primary" data-toggle="tooltip" data-placement="left" title="" style="overflow: hidden; position: relative;" data-original-title="Create new account"><i class="fa fa-plus"></i></a>
-                    </div>
+                         </div>
                     <h2>Please Login</h2>
                 </div>
                 <!-- END Login Title -->
