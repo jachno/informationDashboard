@@ -1,19 +1,19 @@
 <?php
 
-use Illuminate\Foundation\Testing\WithoutMiddleware;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
 
-class ExampleTest extends TestCase
+class Test extends TestCase
 {
+
     /**
-     * A basic functional test example.
-     *
-     * @return void
+     * My test implementation
      */
-    public function testBasicExample()
+    public function testConceptIsFantastic()
     {
-        $this->visit('/')
-             ->see('Laravel 5');
+        $this->visit('/');
+      //  $this->visit('/');
+     //   $this->see('NonFunctional Test Team');
+        //$this->visit('/login');
+        $this->seePageIs('/login');
+       
     }
 }

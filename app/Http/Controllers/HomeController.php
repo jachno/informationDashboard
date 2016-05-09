@@ -49,11 +49,6 @@ class HomeController extends Controller
 public function resetPassword()
 {
     $user =  User::find(1);
-    
-        $u 
-        
-echo $user->password;
-    
 }
 
     public function logout()
