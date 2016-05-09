@@ -1,19 +1,15 @@
 <?php
 
 
-class Test extends TestCase
+class ExampleTest extends TestCase
 {
-
-    /**
-     * My test implementation
-     */
-    public function testConceptIsFantastic()
+    
+/** @test */
+    public function testExample()
     {
-        $this->visit('/');
-      //  $this->visit('/');
-     //   $this->see('NonFunctional Test Team');
-        //$this->visit('/login');
-        $this->seePageIs('/login');
-       
+        $this->visit('/')
+        ->see('NonFunctional Test Team');
+        
+        
     }
 }
