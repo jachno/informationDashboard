@@ -78,13 +78,12 @@
             </div>
                             
                             <div class="col-md-7 col-lg-6">
-                                
-                                
                                 <div class="block full">
                                     @if (Auth::check())
-                                    
-                                    <a href="/postupdate"><button href="" class="btn btn-primary">Post Update</button></a>
-@endif
+                                        <a href="/postupdate"><button href="" class="btn btn-primary">Post Update</button></a>
+                                    @else
+                                      <a href="/login"><button href="" class="btn btn-primary">Login</button></a>
+                                    @endif
                                     </<div>
                                 <div class="block full">
                                     <!-- Block Tabs Title -->
@@ -112,7 +111,7 @@
                                                         @if(Auth::check())
                                                                                                                     <a href="/deleteupdate/{{$timeline->id}}" ><i class="fa fa-trash-o"></i></a>
 
-@endif
+                                                        @endif
                                                         </div>
                                                         <div class="timeline-icon themed-background-info text-light-op"><a href="/postupdate/{{$timeline->id}}"><i class="fa fa-bolt"></i></a></div>
                                                         <div class="timeline-content">
