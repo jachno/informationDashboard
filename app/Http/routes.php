@@ -19,6 +19,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/addbacklog', 'DashboardController@addBacklog');
 
     Route::get('/editbacklog/{id?}/', 'DashboardController@editBacklog');
+        Route::get('/archivebacklogitem/{id?}/', 'DashboardController@archivebacklogitem');
 
 
     Route::post('/formPostBacklog/{id?}/', 'DashboardController@formPostBacklog');

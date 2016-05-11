@@ -12,14 +12,14 @@ class CreateTimelinesTable extends Migration
      */
     public function up()
     {
-
-       Schema::create('timelines', function (Blueprint $table) {
+ Schema::create('timelines', function (Blueprint $table) {
             $table->increments('id');
             $table->string('type');
             $table->longText('description');
             $table->timestamps();
         });
 
+      
     }
 
     /**
