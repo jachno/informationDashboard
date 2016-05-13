@@ -24,6 +24,8 @@ Schema::table('backlogs', function ($table) {
      */
     public function down()
     {
-        //
+Schema::table('backlogs', function ($table) {
+    $table->removecolumn('priority');
+});
     }
 }

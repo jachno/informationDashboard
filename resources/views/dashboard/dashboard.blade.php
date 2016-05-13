@@ -61,10 +61,15 @@
                                                     <td>
                                                         <a href="javascript:void(0)">{{$backlog->name}}</a><br>
                                                             <small>{{$backlog->description}}</small></a>
-                                                                                
-
                                                     </td>
                                                     <td class="text-center" style="width: 80px;">
+                                                        @if(Auth::check())
+                                                        
+                                                        <a href="/archivebacklogitem/{{$backlog->id}}" id ='arvbtn_{{$backlog->id}}' onclick="return confirm('Are you sure you want to archive this item?')"><i  class="fa fa-archive" aria-hidden="true"></i></a>
+                                                         &nbsp;
+                                                        <a href="/editbacklog/{{$backlog->id}}" ><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a><br>
+
+                                                        @endif
                                                     </td>
                                                 </tr>
                                 @endforeach
@@ -109,7 +114,7 @@
                                                     <li>
                                                         <div class="timeline-time">{{ $timeline->created_at->diffForHumans()}}
                                                         @if(Auth::check())
-                                                                                                                    <a href="/deleteupdate/{{$timeline->id}}" ><i class="fa fa-trash-o"></i></a>
+                                                        <a href="/deleteupdate/{{$timeline->id}}" ><i class="fa fa-trash-o"></i></a>
 
                                                         @endif
                                                         </div>

@@ -1,9 +1,7 @@
     <head>
         <meta charset="utf-8">
 
-        <title>Post Descripton</title>
 
-        <meta name="description" content="AppUI is a Web App Bootstrap Admin Template created by pixelcave and published on Themeforest">
         <meta name="author" content="pixelcave">
         <meta name="robots" content="noindex, nofollow">
 
