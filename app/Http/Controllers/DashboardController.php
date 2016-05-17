@@ -21,17 +21,7 @@ class DashboardController extends Controller
         ->orderBy('priority', 'ASC')->get();
         
         
-        foreach($timelines as $timeline)
-        {
-        
-        
-        //echo $timeline->id . ' ';
-        }
-        
-        $test = Timeline::find(71);
-        
-    
-    var_export($test->backlogs);
+
         return view('dashboard.dashboard', compact('timelines', 'backlogs'));
     }
     
