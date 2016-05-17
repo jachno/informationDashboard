@@ -51,6 +51,7 @@
                                         <table class="table table-borderless table-striped table-vcenter">
                                             <tbody>
                                                    @foreach ($backlogs as $backlog)
+                                                   
                                             <tr>
                                                     <td class="text-center" style="width: 100px;">
                                                                    @if(Auth::check())

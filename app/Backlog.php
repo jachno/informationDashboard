@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Backlog extends Model
 {
-    public function roles()
+    public function timelines()
     {
         return $this->belongsToMany('App\timelines');
     }

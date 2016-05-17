@@ -15,11 +15,23 @@ class DashboardController extends Controller
     {
       
 
-        $timelines = Timeline::orderBy('created_at', 'DESC')->get();
 
-        $backlogs = backlog::where('archived',0)
+        $timelines = Timeline::orderBy('created_at', 'DESC')->get();
+        $backlogs = Backlog::where('archived',0)
         ->orderBy('priority', 'ASC')->get();
-               
+        
+        
+        foreach($timelines as $timeline)
+        {
+        
+        
+        //echo $timeline->id . ' ';
+        }
+        
+        $test = Timeline::find(71);
+        
+    
+    var_export($test->backlogs);
         return view('dashboard.dashboard', compact('timelines', 'backlogs'));
     }
     
@@ -50,6 +62,8 @@ class DashboardController extends Controller
         
         $timeline->description = $request->description;
         $timeline->save();
+        $timeline->backlogs()->attach('1');
+        
         return redirect('');
 
     }
