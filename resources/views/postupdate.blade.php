@@ -22,8 +22,7 @@
                 </div>
                 <!-- END Login Title -->
 
- 
- 
+
             @if(isset($timeline))
                 
                       {{Form::model($timeline,array('url' => URL::to('/formpostupdate/' . $timeline->id, array(), true), 'id' =>'submit' ))}}
@@ -31,6 +30,18 @@
                 @else
                       {{Form::open(array('url' => URL::to('/formpostupdate', array(), false), 'id' =>'submit' ))}}
                 @endif
+                
+     
+                
+                    {!! Form::select('bck[]', 
+    $backlogs, 
+    null, 
+    ['class' => 'form-control', 
+    'multiple' => 'multiple']) !!}
+                
+                
+                
+
                             {{ Form::label('description') }}
                                 {{ Form::textarea('description',null,array('class'=>'form-control')) }}
                                     {{ Form::submit('Save', array('class' => 'btn btn-effect-ripple btn-sm btn-primary')) }}

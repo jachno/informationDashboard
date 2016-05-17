@@ -28,7 +28,20 @@ class DashboardController extends Controller
     
     function postUpdate($id = null)
     {
-        return view('postupdate')->with('timeline', Timeline::find($id));
+        
+     //$backlogs = Backlog::where('archived',0)
+      //  ->orderBy('priority', 'ASC')->get();
+        
+     //   $backlogs = Backlog::lists('name','id')->where('archived',0);
+     
+     $backlogs = Backlog::where('archived',0)
+        ->orderBy('priority', 'ASC')->lists('name','id');
+     
+        
+        $timeline =  Timeline::find($id);
+        
+        return view('postupdate',compact('timeline', 'backlogs'));
+        
     }
     
     
@@ -51,16 +64,20 @@ class DashboardController extends Controller
                             ]);
         
         $timeline->description = $request->description;
-        $timeline->save();
-        $timeline->backlogs()->attach('1');
         
-        return redirect('');
+        $timeline->save();
+        $timeline->backlogs()->sync($request->bck);
+        
+        
+        var_export( $request->bck);
+        
+        //return redirect('');
 
     }
 
     function editBacklog(Request $request, $id = null)
     {
-        return view('backlog')->with('backlog', backlog::find($id));
+                return view('backlog')->with('backlog', backlog::find($id));
     }
     
     
