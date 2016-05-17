@@ -98,5 +98,6 @@ class DashboardController extends Controller
        $backlog = backlog::findorfail($id);
        $backlog->archived = 1;
        $backlog->save();
+       return redirect('');
     }
 }
