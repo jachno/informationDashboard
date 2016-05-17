@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
-use App\timeline;
+use App\Timeline;
 use App\Backlog;
 use Auth;
 use Log;
@@ -15,10 +15,10 @@ class DashboardController extends Controller
     {
       
 
-        $timelines = timeline::orderBy('created_at', 'DESC')->get();
+        $timelines = Timeline::orderBy('created_at', 'DESC')->get();
 
-               $backlogs = backlog::where('archived',0)
-               ->orderBy('priority', 'ASC')->get();
+        $backlogs = backlog::where('archived',0)
+        ->orderBy('priority', 'ASC')->get();
                
         return view('dashboard.dashboard', compact('timelines', 'backlogs'));
     }
@@ -26,7 +26,7 @@ class DashboardController extends Controller
     
     function postUpdate($id = null)
     {
-        return view('postupdate')->with('timeline', timeline::find($id));
+        return view('postupdate')->with('timeline', Timeline::find($id));
     }
     
     
@@ -37,9 +37,9 @@ class DashboardController extends Controller
         if ($id == null) {
             Log::info('new');
 
-            $timeline = new timeline;
+            $timeline = new Timeline;
         } else {
-            $timeline = timeline::findorfail($id);
+            $timeline = Timeline::findorfail($id);
         }
 
         Log::info($request);
@@ -62,7 +62,7 @@ class DashboardController extends Controller
     
     function deleteUpdate(Request $request, $id)
     {
-        $update = timeline::find($id);
+        $update = Timeline::find($id);
         
         $update->delete();
         return redirect('');
@@ -78,9 +78,6 @@ class DashboardController extends Controller
         } else {
                 $backlog = backlog::findorfail($id);
         }
-        
-        
-        
         
         $backlog->name = $request->name;
         $backlog->description = $request->description;
@@ -98,13 +95,8 @@ class DashboardController extends Controller
     
     function archivebacklogitem($id)
     {
-     
        $backlog = backlog::findorfail($id);
-       
        $backlog->archived = 1;
-       
        $backlog->save();
-    echo 'archived';   
-  //     return redirect('/');
     }
 }
