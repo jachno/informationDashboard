@@ -13,15 +13,9 @@ class DashboardController extends Controller
 {
     function index()
     {
-      
-
-
         $timelines = Timeline::orderBy('created_at', 'DESC')->get();
         $backlogs = Backlog::where('archived',0)
         ->orderBy('priority', 'ASC')->get();
-        
-        
-
         return view('dashboard.dashboard', compact('timelines', 'backlogs'));
     }
     
@@ -66,12 +60,10 @@ class DashboardController extends Controller
         $timeline->description = $request->description;
         
         $timeline->save();
-        $timeline->backlogs()->sync($request->bck);
+        $timeline->backlogs()->sync($request->bck ?: []);
         
-        
-        var_export( $request->bck);
-        
-        //return redirect('');
+
+        return redirect('');
 
     }
 

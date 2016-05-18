@@ -20,22 +20,24 @@ class DashboardTest extends TestCase
     }
     
     
+    public function testLoginButtonAppears()
+    {
+                $this->visit('/');
+                $this->see('Login');
+                $this->click('Login');
+                $this->see('Welcome to NFT Dashboard');
+    }
+    
     public function testArchiveButtonForLoggedInUser()
     {
-        
                 $user = factory(App\User::class)->create();
-
                 $this->actingAs($user);
-        
                 $backlog = factory(App\Backlog::class)->make();
                 $backlog->save();
                 fwrite(STDERR, print_r('creating a backlogitem with the id ' .  $backlog->id, TRUE));
-                
                 $this->visit('/');
-                
                 $this->see($backlog->name);
                 $this->click('arvbtn_'. $backlog->id);
-                
                 $this->seeInDatabase('backlogs', ['id' => $backlog->id, 'archived' =>1 ]);
 
     }
@@ -46,4 +48,26 @@ class DashboardTest extends TestCase
                     $this->dontsee('arvbtn');
     }
     
+    
+    public function testCheckPostBackLogAssociation()
+    {
+        
+             $faker = Faker\Factory::create();
+             $user = factory(App\User::class)->create();
+             $this->actingAs($user);
+             $backlog = factory(App\Backlog::class)->make();
+             $backlog->save();
+             $this->visit('/postupdate');
+             $this->see($backlog->name);
+             
+             $this->select( $backlog->id,'#associatedBacklog');
+            
+             $testDescription = $faker->name();
+             $this->type($testDescription, 'description');
+             $this->press('Save');
+             $this->seePageIs('/')->see($testDescription);
+             
+             
+             //$this->assertRedirectedTo($uri, $with = []);	
+}
 }

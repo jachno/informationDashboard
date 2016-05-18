@@ -34,11 +34,11 @@
      
                 
                     {!! Form::select('bck[]', 
-    $backlogs, 
-    null, 
-    ['class' => 'form-control', 
-    'multiple' => 'multiple']) !!}
-                
+                    $backlogs, 
+                    null, 
+                    ['name' => 'associatedBacklog','class' => 'form-control', 
+                    'multiple' => 'multiple']) !!}
+                                
                 
                 
 
