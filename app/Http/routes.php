@@ -28,6 +28,8 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::get('/deleteupdate/{id}', 'DashboardController@deleteUpdate');
 
+    Route::get('/viewbacklogcard/{id}', 'DashboardController@viewbacklogcard');
+
     
 // route to show the login form
     Route::get('login', array('uses' => 'HomeController@showLogin'));

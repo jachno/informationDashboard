@@ -51,6 +51,7 @@ class DashboardTest extends TestCase
     
     public function testCheckPostBackLogAssociation()
     {
+    
         
              $faker = Faker\Factory::create();
              $user = factory(App\User::class)->create();
@@ -60,13 +61,13 @@ class DashboardTest extends TestCase
              $this->visit('/postupdate');
              $this->see($backlog->name);
              
-             $this->select( $backlog->id,'#associatedBacklog');
+             
+             $this->select( $backlog->id,'bck');
             
              $testDescription = $faker->name();
              $this->type($testDescription, 'description');
              $this->press('Save');
+             fwrite(STDERR, print_r('testdescription is ' . $testDescription));
              $this->seePageIs('/')->see($testDescription);
-             
-             
-}
+    }
 }
