@@ -126,9 +126,15 @@ class DashboardController extends Controller
     {       
         
         $backlog = Backlog::findorfail($id);
-        $timelines = $backlog->timelines();
-        echo $timelines->count();
-        
-        //var_export($timelines);
+       // $timelines = $backlog->timelines();
+//        echo $timelines->count();
+
+
+               foreach($backlog->timelines as $timeline)
+               {
+                 echo $timeline->description;
+               }
+        return view('backlog.backlog')->with('backlog', $backlog);
+
     }
 }
