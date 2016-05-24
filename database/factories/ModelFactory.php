@@ -21,7 +21,7 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 
 $factory->define(App\Backlog::class, function (Faker\Generator $faker) {
     return [
-        'name' =>$faker->name,
+        'name' =>$faker->firstName,
         'description' => $faker->text,
         'priority' => 0
     ];

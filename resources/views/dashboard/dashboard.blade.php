@@ -60,7 +60,7 @@
                                                         {{$backlog->priority}}<br>
                                                     @endif
                                                     <td>
-                                                        <a href="javascript:void(0)">{{$backlog->name}}</a><br>
+                                                        <a href="/viewbacklogcard/{{$backlog->id}}">{{$backlog->name}}</a><br>
                                                             <small>{{$backlog->description}}</small></a>
                                                     </td>
                                                     <td class="text-center" style="width: 80px;">
