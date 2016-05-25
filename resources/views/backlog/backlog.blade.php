@@ -36,7 +36,6 @@
                                                    
                                             <tr>
                                                     <td class="text-center" style="width: 100px;">
-                                                  
                                                         <a href="/editbacklog/{{$backlog->id}}" class="text-muted">{{$backlog->priority}}</a><br>
                                                     <td>
                                                         <a href="javascript:void(0)">{{$backlog->name}}</a><br>
@@ -49,8 +48,7 @@
                                         </table>
                                     </div>
                             </div>
-                            
-            </div>
+                </div>
             </div>
                             
                             <div class="col-md-7 col-lg-6">
@@ -64,30 +62,25 @@
                                         </div>
                                         <ul class="nav nav-tabs" data-toggle="tabs">
                                             <li class="active"><a href="#profile-activity">Activity</a></li>
-                                            
                                         </ul>
                                     </div>
                                     <!-- END Block Tabs Title -->
-
                                     <!-- Tabs Content -->
                                     <div class="tab-content">
                                         <!-- Activity -->
                                         <div class="tab-pane active" id="profile-activity">
                                             <div class="timeline block-content-full">
                                                 <ul class="timeline-list">
-
                                                      @foreach ($backlog->timelines as $timeline)
                                                     <li>
                                                         <div class="timeline-time">{{ $timeline->created_at->diffForHumans()}}
                                                         @if(Auth::check())
                                                         <a href="/deleteupdate/{{$timeline->id}}" ><i class="fa fa-trash-o"></i></a>
-
                                                         @endif
                                                         </div>
                                                         <div class="timeline-icon themed-background-info text-light-op"><a href="/postupdate/{{$timeline->id}}"><i class="fa fa-bolt"></i></a></div>
                                                         <div class="timeline-content">
                                                             <p class="push-bit" style="word-wrap: break-word;">{{$timeline->description }}</p>
-                                                            
                                                         </div>
                                                     </li>
                                                     @endforeach
@@ -95,8 +88,6 @@
                                             </div>
                                         </div>
                                         <!-- END Activity -->
-
-                                        
                                     </div>
                                     <!-- END Tabs Content -->
                                 </div>

@@ -52,7 +52,6 @@ class DashboardTest extends TestCase
     public function testCheckPostBackLogAssociationAndViewBacklogCard()
     {
     
-        
              $faker = Faker\Factory::create();
              $user = factory(App\User::class)->create();
              $this->actingAs($user);
@@ -66,23 +65,12 @@ class DashboardTest extends TestCase
              $this->press('Save');
              $this->seePageIs('/')->see($backlog->name);
              $record =  DB::table('backlog_timeline')->orderBy('backlog_id', 'desc')->first();
-             
-             
              $timeline = Timeline::find($record->timeline_id);
-             
-             
-             
-             //need to add check in database
              $this->seeInDatabase('backlog_timeline', ['backlog_id' => $backlog->id, 'timeline_id' => $timeline->id ]);
              $this->click($backlog->name);
-           
-           
-           
              $this->seePageIs('viewbacklogcard/' . $backlog->id)->see($testDescription);
              $this->see($backlog->name);
              $this->see($testDescription);
-
-             
     }
     
     
