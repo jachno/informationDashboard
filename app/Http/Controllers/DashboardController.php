@@ -53,14 +53,21 @@ class DashboardController extends Controller
 
         Log::info($request);
 
+
         $this->validate($request, [
                             'description' => 'required|max:1000'
                             ]);
         
         $timeline->description = $request->description;
-        
+
         $timeline->save();
-        $timeline->backlogs()->sync($request->bck ?: []);
+
+        
+        $timeline->backlogs()->attach($request->bck);
+        
+        
+        var_export($request->bck);
+        
         
 
         return redirect('');
@@ -112,5 +119,15 @@ class DashboardController extends Controller
        $backlog->archived = 1;
        $backlog->save();
        return redirect('');
+    }
+    
+    
+    function viewbacklogcard($id)
+    {       
+        
+        $backlog = Backlog::findorfail($id);
+       
+        return view('backlog.backlog')->with('backlog', $backlog);
+
     }
 }

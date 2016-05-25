@@ -18,8 +18,7 @@
                 <!-- Login Title -->
                 <div class="block-title">
                     <div class="block-options pull-right">
-                        <a href="page_ready_reminder.html" class="btn btn-effect-ripple btn-primary" data-toggle="tooltip" data-placement="left" title="Forgot your password?"><i class="fa fa-exclamation-circle"></i></a>
-                        <a href="page_ready_register.html" class="btn btn-effect-ripple btn-primary" data-toggle="tooltip" data-placement="left" title="Create new account"><i class="fa fa-plus"></i></a>
+                        
                     </div>
                     <h2>Post new update</h2>
                 </div>
@@ -37,16 +36,17 @@
  
 
 
-                            {{ Form::label('name', 'name', array('class' => 'form-control')) }}
-                                {{ Form::text('name') }}
-                                {{ Form::label('description') }}
-                                {{ Form::text('description')}}
-                                {{ Form::label('priority') }}
-                                {{ Form::text('priority')}}
+                                {{ Form::label('name', 'name', array('class' => 'form-control')) }}
+                                {{ Form::text('name','',['class' => 'form-control']) }}
+                                {{ Form::label('description','',['class' => 'form-control']) }}
+                                {{ Form::text('description','',['class' => 'form-control'])}}
+                                {{ Form::label('priority','',['class' => 'form-control']) }}
+                                {{ Form::selectRange('priority', 1, 10,null, array( 'class' => 'form-control'))}}
+                                
+                                
                                 {{ Form::submit('Save', array('class' => 'btn btn-effect-ripple btn-sm btn-primary')) }}
                             {{ Form::close() }}
-                            
-                                          
+
                 <!-- END Login Form -->
             </div>
             <!-- END Login Block -->
